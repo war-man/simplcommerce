@@ -21,16 +21,18 @@ steps:
     arguments: '--configuration $(buildConfiguration)' # Update this to match your need
     
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet publish'
   inputs:
     command: publish
-    publishWebProjects: true
-    projects: 'src/SimplCommerce.WebHost/SimplCommerce.WebHost.csproj'
-    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: false
-    
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
+
+# this code takes all the files in $(Build.ArtifactStagingDirectory) and uploads them as an artifact of your build.
 - task: PublishBuildArtifacts@1
-  displayName: 'publish artifacts'
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'myWebsiteName'
+    
 
 
 
