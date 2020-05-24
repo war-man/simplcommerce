@@ -17,7 +17,7 @@ steps:
   displayName: Build
   inputs:
     command: build
-    projects: 'SimpleCommerce.sln'
+    projects: 'SimplCommerce.sln'
     arguments: '--configuration $(buildConfiguration)' # Update this to match your need
     
 - task: DotNetCoreCLI@2
@@ -25,7 +25,7 @@ steps:
   inputs:
     command: publish
     publishWebProjects: true
-    projects: 'SimpleCommerce.sln'
+    projects: 'SimplCommerce.sln'
     zipAfterPublish: false
     modifyOutputPath: true
     
