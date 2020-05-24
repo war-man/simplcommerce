@@ -27,8 +27,6 @@ steps:
     publishWebProjects: true
     projects: 'src/SimplCommerce.WebHost/SimplCommerce.WebHost.csproj'
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: false
-    modifyOutputPath: true
     
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
