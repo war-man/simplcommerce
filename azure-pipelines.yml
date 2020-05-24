@@ -24,7 +24,7 @@ steps:
   inputs:
     command: publish
     projects: 'src/SimplCommerce.WebHost/SimpleCommerce.WebHost.csproj'
-    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    arguments: '--configuration $(buildConfiguration) --output testpath/$(Build.ArtifactStagingDirectory)'
     
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
