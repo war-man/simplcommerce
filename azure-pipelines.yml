@@ -19,12 +19,16 @@ steps:
     command: build
     projects: 'src/SimplCommerce.WebHost/SimpleCommerce.WebHost.csproj'
     arguments: '--configuration $(buildConfiguration)' # Update this to match your need
+    
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet publish $(buildConfiguration)'
+  displayName: 'dotnet publish'
   inputs:
     command: publish
+    publishWebProjects: true
     projects: 'src/SimplCommerce.WebHost/SimpleCommerce.WebHost.csproj'
-    arguments: '--configuration $(buildConfiguration) --output testpath/$(Build.ArtifactStagingDirectory)'
+    arguments: '-o testpath'
+    zipAfterPublish: false
+    modifyOutputPath: true
     
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
