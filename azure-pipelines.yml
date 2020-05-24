@@ -17,7 +17,7 @@ steps:
   displayName: Build
   inputs:
     command: build
-    projects: 'SimplCommerce.sln'
+    projects: 'src/SimplCommerce.WebHost/SimplCommerce.WebHost.csproj'
     arguments: '--configuration $(buildConfiguration)' # Update this to match your need
     
 - task: DotNetCoreCLI@2
