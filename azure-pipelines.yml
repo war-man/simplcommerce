@@ -17,7 +17,7 @@ steps:
   displayName: Build
   inputs:
     command: build
-    projects: 'src/SimplCommerce.WebHost/SimpleCommerce.WebHost.csproj'
+    projects: 'SimpleCommerce.sln'
     arguments: '--configuration $(buildConfiguration)' # Update this to match your need
     
 - task: DotNetCoreCLI@2
@@ -25,7 +25,7 @@ steps:
   inputs:
     command: publish
     publishWebProjects: true
-    projects: 'src/SimplCommerce.WebHost/SimpleCommerce.WebHost.csproj'
+    projects: 'SimpleCommerce.sln'
     arguments: '-o testpath'
     zipAfterPublish: false
     modifyOutputPath: true
