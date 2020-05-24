@@ -26,6 +26,7 @@ steps:
     command: publish
     publishWebProjects: true
     projects: 'SimplCommerce.sln'
+    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: false
     modifyOutputPath: true
     
